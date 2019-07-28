@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Roboto&display=swap" rel="stylesheet">
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <audio id="coin" class="sounds" src="./sounds/Coin-pickup-sound.mp3"></audio>
+    <audio id="countdown" class="sounds" src="./sounds/Countdown-start.mp3"></audio>
+    <audio id="doors" class="sounds" src="./sounds/Elevator-door-closing-sound-effect.mp3"></audio>
+
+    <div class="main_container">
+        <h1 class="main_heading">Listen to me!</h1>
+        <p>
+            Sometimes we all need the reminder: drink more water, get enough sleep, your body needs fruit and vegetables. Kirsty is here to give you that little outside push, whenever you need it.
+        </p>
+        <p>
+            <em>Pro-tip: hearing it is great, but you should totally go and do it! Then tap on one of the trophies when
+                you come
+                back.</em>
+        </p>
+        <div id="button_table">
+            <div class="btn" onclick="javascript:playSound('coin')"><img src="./images/001-tooth.png"></div>
+            <div class="btn" onclick="javascript:playSound('doors')"><img src="./images/002-gardening.png"></div>
+            <div class="btn" onclick="javascript:playSound('coin')"><img src="./images/003-yoga.png"></div>
+            <div class="btn" onclick="javascript:playSound('countdown')"><img src="./images/004-drawing.png"></div>
+        </div>
+</body>
+
+<div id="footer">
+    <p>
+        Icons made by <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> (messages attribution is licensed by
+        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
+            BY</a>)
+    </p>
+</div>
+
+<script type="text/javascript">
+    function playSound(sound) {
+        const allSounds = document.getElementsByClassName("sounds")
+        for (element of allSounds) {
+            element.pause()
+            element.currentTime = 0
+        }
+        const currentSound = document.getElementById(sound)
+        currentSound.play()
+    }
+</script>
+
+</html>
